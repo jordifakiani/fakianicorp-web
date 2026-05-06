@@ -70,6 +70,12 @@ a {
   color: var(--text);
 }
 
+.menu a:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
 .hero {
   padding: 5rem 0 4rem;
 }
@@ -253,5 +259,13 @@ a {
     text-align: left;
     align-items: flex-start;
     flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }
