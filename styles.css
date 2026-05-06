@@ -1,0 +1,257 @@
+:root {
+  --bg: #16100c;
+  --bg-soft: #261914;
+  --surface: #2a1e19;
+  --text: #f7eee8;
+  --muted: #d2bfb2;
+  --primary: #d98b42;
+  --primary-strong: #b86828;
+  --border: rgba(240, 203, 177, 0.2);
+  --glow: 0 20px 50px rgba(199, 120, 54, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: radial-gradient(circle at 15% 20%, #3a2418 0, var(--bg) 45%),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1120px, 90%);
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(12px);
+  background: rgba(22, 16, 12, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  z-index: 30;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.menu {
+  display: flex;
+  gap: 1.4rem;
+  color: var(--muted);
+}
+
+.menu a:hover {
+  color: var(--text);
+}
+
+.hero {
+  padding: 5rem 0 4rem;
+}
+
+.hero-grid {
+  display: grid;
+  gap: 2.2rem;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+}
+
+.eyebrow {
+  color: #f0b177;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-top: 0.9rem;
+  line-height: 1.15;
+}
+
+.lead {
+  color: var(--muted);
+  max-width: 62ch;
+  margin-top: 1rem;
+}
+
+.hero-actions {
+  margin-top: 1.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.7rem 1.2rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: 0.2s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(120deg, var(--primary), var(--primary-strong));
+  box-shadow: var(--glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.btn-light {
+  background: #f5e4d6;
+  color: #2d1b13;
+}
+
+.hero-card {
+  border: 1px solid var(--border);
+  background: linear-gradient(165deg, rgba(166, 97, 44, 0.25), var(--surface));
+  border-radius: 20px;
+  padding: 1.6rem;
+  box-shadow: var(--glow);
+}
+
+.metric-label {
+  color: #e5b690;
+  font-size: 0.95rem;
+}
+
+.hero-card h2 {
+  font-size: 3rem;
+  line-height: 1;
+  margin: 0.5rem 0;
+}
+
+.hero-card p {
+  color: var(--muted);
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+.metrics article {
+  border: 1px solid rgba(240, 203, 177, 0.2);
+  border-radius: 12px;
+  padding: 0.9rem;
+  background: rgba(20, 13, 10, 0.55);
+}
+
+.metrics strong {
+  display: block;
+  font-size: 1.2rem;
+}
+
+.metrics span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.section {
+  padding: 4.5rem 0;
+}
+
+.section h3 {
+  font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+  margin-bottom: 1.4rem;
+}
+
+.cards,
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card,
+.benefits article {
+  border: 1px solid var(--border);
+  background: rgba(33, 22, 18, 0.7);
+  border-radius: 14px;
+  padding: 1.2rem;
+}
+
+.card h4,
+.benefits h4 {
+  margin-bottom: 0.5rem;
+}
+
+.card p,
+.benefits p {
+  color: var(--muted);
+}
+
+.section-dark {
+  background: linear-gradient(180deg, rgba(22, 16, 12, 0), rgba(12, 8, 6, 0.85));
+}
+
+.cta-inner {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: linear-gradient(130deg, rgba(190, 107, 49, 0.22), rgba(22, 15, 11, 0.82));
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cta p {
+  color: #edd6c7;
+}
+
+@media (max-width: 920px) {
+  .menu {
+    display: none;
+  }
+
+  .hero-grid,
+  .cards,
+  .benefits,
+  .cta-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-inner {
+    text-align: left;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
